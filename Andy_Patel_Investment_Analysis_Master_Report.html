@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andy Patel Investment Analysis — 11 Property Ranked Report | Verandah Properties</title>
+<style>
+:root {
+    --teal: #008C82;
+    --teal-dark: #006661;
+    --gold: #D4AF50;
+    --gold-light: #E8D094;
+    --green: #2d8a3e;
+    --green-bg: #f0f7f1;
+    --amber: #c9a227;
+    --amber-bg: #fbf8ee;
+    --red: #b8392e;
+    --red-bg: #fbf0ee;
+    --ink: #1a1a1a;
+    --body: #2a2a2a;
+    --muted: #666;
+    --light-muted: #888;
+    --border: #e5e5e5;
+    --bg: #fafafa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--body);
+    line-height: 1.55;
+    font-size: 16px;
+    background: #fff;
+}
+.serif { font-family: 'Georgia', 'Times New Roman', serif; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== HEADER ===== */
+.report-header {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: white;
+    padding: 48px 0 56px 0;
+    border-bottom: 4px solid var(--gold);
+}
+.report-header .brand {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.report-header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.report-header .subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 24px;
+    max-width: 750px;
+}
+.report-header .meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 14px;
+}
+.report-header .meta div b { display: block; font-size: 11px; letter-spacing: 1px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 4px; }
+
+/* ===== SECTION HEADERS ===== */
+section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    color: var(--teal);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+    margin-top: 8px;
+}
+section .section-intro {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    max-width: 750px;
+}
+
+/* ===== EXEC SUMMARY ===== */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+.summary-card {
+    background: var(--bg);
+    border-left: 4px solid var(--teal);
+    padding: 16px;
+    border-radius: 4px;
+}
+.summary-card .label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.summary-card .value {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: var(--ink);
+    font-weight: 700;
+}
+.summary-card .value-sub {
+    font-size: 12px;
+    color: var(--light-muted);
+    margin-top: 2px;
+}
+.summary-card.gold { border-left-color: var(--gold); }
+.summary-card.green { border-left-color: var(--green); }
+.summary-card.amber { border-left-color: var(--amber); }
+
+/* ===== TOP RECOMMENDATIONS ===== */
+.top-recs { margin-bottom: 32px; }
+.top-recs h3 {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    color: var(--ink);
+    margin-bottom: 16px;
+}
+.rec-item {
+    background: var(--green-bg);
+    border-left: 4px solid var(--green);
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.rec-item .rank {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 13px;
+    margin-right: 12px;
+}
+.rec-item .name {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--ink);
+}
+.rec-item .desc {
+    font-size: 14px;
+    color: var(--body);
+    margin-top: 4px;
+    margin-left: 40px;
+}
+.bottom-recs .rec-item { background: var(--red-bg); border-left-color: var(--red); }
+.bottom-recs .rec-item .rank { background: var(--red); }
+
+/* ===== RANKING TABLE ===== */
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+.ranking-table th {
+    background: var(--teal);
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+}
+.ranking-table th.numeric { text-align: right; }
+.ranking-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+.ranking-table td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+.ranking-table tr:hover { background: var(--bg); }
+.ranking-table tr:hover a { text-decoration: underline; }
+.ranking-table .rank-cell {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--teal);
+    width: 50px;
+    text-align: center;
+}
+.ranking-table .name-cell { font-weight: 600; }
+.ranking-table .name-cell a { color: var(--ink); text-decoration: none; }
+.ranking-table .subdiv-cell { font-size: 11px; color: var(--muted); display: block; }
+.ranking-table .signal-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.signal-pill.favorable { background: var(--green-bg); color: var(--green); }
+.signal-pill.neutral { background: var(--amber-bg); color: var(--amber); }
+.signal-pill.caution { background: var(--red-bg); color: var(--red); }
+.score-bar {
+    display: inline-block;
+    width: 60px;
+    height: 6px;
+    background: #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.score-bar-fill { display: block; height: 100%; }
+.score-fav { background: var(--green); }
+.score-neu { background: var(--amber); }
+.score-cau { background: var(--red); }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+
+/* ===== METHODOLOGY ===== */
+.methodology {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+.methodology h3 {
+    font-family: 'Georgia', serif;
+    color: var(--teal);
+    margin-bottom: 12px;
+}
+.weight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+    margin-top: 12px;
+}
+.weight-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 14px;
+}
+.weight-item .pct { font-weight: bold; color: var(--teal); font-family: 'Georgia', serif; }
+
+/* ===== PROPERTY DETAILS ===== */
+.property-detail {
+    margin-bottom: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--gold);
+    scroll-margin-top: 24px;
+}
+.property-detail .rank-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+.property-detail .rank-num {
+    font-family: 'Georgia', serif;
+    font-size: 56px;
+    color: var(--teal);
+    font-weight: 700;
+    line-height: 1;
+}
+.property-detail .rank-badge {
+    background: var(--gold);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.property-detail h3 {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.property-detail .subdiv-line {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+.property-detail .composite-score {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--teal);
+}
+.property-detail .composite-score .score-num {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--teal);
+    line-height: 1;
+}
+.property-detail .composite-score .score-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.property-detail .composite-score .score-tagline {
+    flex: 1;
+    font-size: 14px;
+    color: var(--body);
+    font-style: italic;
+}
+.property-detail .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.property-detail .mini-metric {
+    background: var(--bg);
+    padding: 10px;
+    border-left: 3px solid var(--teal);
+    border-radius: 0 4px 4px 0;
+}
+.property-detail .mini-metric .label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.property-detail .mini-metric .value {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--ink);
+    margin-top: 2px;
+}
+.property-detail .mini-metric.green { border-left-color: var(--green); }
+.property-detail .mini-metric.green .value { color: var(--green); }
+.property-detail .mini-metric.red { border-left-color: var(--red); }
+.property-detail .mini-metric.red .value { color: var(--red); }
+.property-detail .mini-metric.gold { border-left-color: var(--gold); }
+.property-detail .insight-block {
+    background: var(--bg);
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--gold);
+}
+.property-detail .insight-block.green { border-left-color: var(--green); background: var(--green-bg); }
+.property-detail .insight-block.amber { border-left-color: var(--amber); background: var(--amber-bg); }
+.property-detail .insight-block.red { border-left-color: var(--red); background: var(--red-bg); }
+.property-detail .insight-block b { color: var(--teal); }
+.property-detail .insight-block.green b { color: var(--green); }
+.property-detail .insight-block.amber b { color: var(--amber); }
+.property-detail .insight-block.red b { color: var(--red); }
+.score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 11px;
+}
+.score-breakdown .sb-item {
+    background: white;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-align: center;
+}
+.score-breakdown .sb-item .label {
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.score-breakdown .sb-item .val {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--ink);
+}
+.back-to-top {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+.back-to-top:hover { text-decoration: underline; }
+
+/* ===== INSIGHTS GRID ===== */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.insight-card {
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 6px;
+    border-top: 3px solid var(--teal);
+}
+.insight-card h4 {
+    font-family: 'Georgia', serif;
+    color: var(--teal);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+.insight-card p { font-size: 14px; color: var(--body); }
+
+/* ===== RECOMMENDATIONS ===== */
+.action-block {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 14px;
+}
+.action-block h4 {
+    color: var(--teal);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.action-block h4 .step-num {
+    background: var(--gold);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.action-block p { font-size: 14px; color: var(--body); margin-bottom: 6px; }
+.action-block ul { margin-left: 20px; font-size: 14px; }
+.action-block li { padding: 3px 0; }
+
+/* ===== FOOTER ===== */
+.report-footer {
+    background: var(--ink);
+    color: white;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+}
+.report-footer .brand {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+.report-footer .disclaimer {
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    margin-top: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .weight-grid { grid-template-columns: 1fr; }
+    .insights-grid { grid-template-columns: 1fr; }
+    .property-detail .metrics-row { grid-template-columns: repeat(3, 1fr); }
+    .score-breakdown { grid-template-columns: repeat(4, 1fr); }
+    .ranking-table { font-size: 11px; }
+    .ranking-table th, .ranking-table td { padding: 8px 4px; }
+    .report-header h1 { font-size: 28px; }
+    section h2 { font-size: 22px; }
+    .property-detail .rank-num { font-size: 40px; }
+}
+@media print {
+    .ranking-table { page-break-inside: avoid; }
+    .property-detail { page-break-before: always; }
+    body { font-size: 11pt; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="report-header" id="top">
+    <div class="container">
+        <div class="brand">Verandah Properties · Investment Analysis</div>
+        <h1>11-Property Ranked Investment Report</h1>
+        <p class="subtitle">Cash investor analysis prepared for Andy Patel — long-term unfurnished rental hold strategy in the Lake Nona &amp; St. Cloud corridor.</p>
+        <div class="meta">
+            <div><b>Prepared By</b>Pamela Syvertson, Owner &amp; Broker</div>
+            <div><b>Report Date</b>May 4, 2026</div>
+            <div><b>Properties Analyzed</b>11 active listings</div>
+            <div><b>Methodology</b>Weighted composite scoring (RealAVM + RentAVM)</div>
+        </div>
+    </div>
+</header>
+
+<!-- EXECUTIVE SUMMARY -->
+<section id="executive-summary">
+    <div class="container">
+        <h2>Executive Summary</h2>
+        <p class="section-intro">Eleven shortlisted properties evaluated against a value-and-yield framework calibrated for cash-buyer, long-term unfurnished rental strategy. Set-wide context first, then ranked recommendations.</p>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="label">Price Range</div>
+                <div class="value">$304K–$409K</div>
+                <div class="value-sub">Median: $359,990</div>
+            </div>
+            <div class="summary-card gold">
+                <div class="label">Indicative Yield Range</div>
+                <div class="value">7.1%–9.0%</div>
+                <div class="value-sub">Set median: 7.85%</div>
+            </div>
+            <div class="summary-card green">
+                <div class="label">Annual Carry Range</div>
+                <div class="value">$6.1K–$14.1K</div>
+                <div class="value-sub">1.75% to 3.46% of purchase</div>
+            </div>
+            <div class="summary-card amber">
+                <div class="label">Set Composition</div>
+                <div class="value">3 Det / 8 Att</div>
+                <div class="value-sub">3 Lake Nona · 8 St. Cloud</div>
+            </div>
+        </div>
+
+        <div class="top-recs">
+            <h3 style="color: var(--green);">▲ Top 3 Recommendations</h3>
+            <div class="rec-item">
+                <span class="rank">1</span><span class="name">Sunridge Loop (Suncrest REO)</span>
+                <div class="desc">Largest AVM discount in set (+7.7%), bank-owned with two-year clearance pressure, sister-unit rental verification, and lean carry. Cash offer at $285–300K is realistic and produces a +13–18% AVM gap. Best risk-adjusted opportunity in the set.</div>
+            </div>
+            <div class="rec-item">
+                <span class="rank">2</span><span class="name">Citruswood Drive (Lake Nona / Enclave at Moss Park)</span>
+                <div class="desc">Highest indicative gross yield in the set (9.03%), only true 32832 Lake Nona address with premier Innovation High school zone, and an LLC investor seller motivated to redeploy. The 4-bedroom + first-floor primary suite is a structural rental advantage. Older 2012 build is the trade-off.</div>
+            </div>
+            <div class="rec-item">
+                <span class="rank">3</span><span class="name">Sunkissed Drive (Suncrest)</span>
+                <div class="desc">Cleanest transaction profile in the set — private vacant seller, dual-track sale-and-rent listing with active rental ask of $2,150 confirming the RentAVM, single-story townhouse format, and second-lowest carry %. Lower negotiation runway than #1 and #2, but the path to closing is the simplest.</div>
+            </div>
+        </div>
+
+        <div class="top-recs bottom-recs">
+            <h3 style="color: var(--red);">▼ Bottom 3 — Pursue with Caution or Avoid</h3>
+            <div class="rec-item">
+                <span class="rank">11</span><span class="name">Town Lake Drive (Ravinia · Lake Nona, FLOOD ZONE)</span>
+                <div class="desc">Only property in the set with FEMA Zone AE flood designation requiring mandatory insurance. Heaviest carrying cost in set ($14,146/yr, 3.46% carry), 3-story stair-burdened layout, and zero price reductions in 92 days. Investor case requires meaningful AVM-discount negotiation and elevation certificate review.</div>
+            </div>
+            <div class="rec-item">
+                <span class="rank">10</span><span class="name">Caspian Street (Lakeshore at Narcoossee)</span>
+                <div class="desc">List price is 3.4% above AVM with 95-confidence Realist read disagreeing. Real owner distress exists ($40K below 2022 cost basis, 166+ cumulative days), but only worth pursuing as an opportunistic AVM-priced offer at $310–320K — not at list.</div>
+            </div>
+            <div class="rec-item">
+                <span class="rank">9</span><span class="name">Crossings Avenue (Crossings Phase 1)</span>
+                <div class="desc">List 1.1% above AVM with 99-confidence Realist read. Owner bought 13 months ago and isn't distressed — modest cuts and dual-track listing suggest hedging, not motivation. Tax shock post-sale (homestead drops) plus CDD makes carry math weak. Pass at list.</div>
+            </div>
+        </div>
+
+        <p style="font-size: 14px; color: var(--muted); font-style: italic; margin-top: 16px;">
+            Note on Sunsail (rank 8): listed under Caution due to a documented 7-month failed rental-market test in 2025. The owner reduced rent seven times from $2,750 to $2,400 and could not lease the property. For a long-term hold rental strategy, this is the single largest red flag in the set and should not be ignored despite the seller's motivation profile.
+        </p>
+    </div>
+</section>
+
+<!-- MASTER RANKING TABLE -->
+<section id="ranking">
+    <div class="container">
+        <h2>Master Ranking — Best to Worst</h2>
+        <p class="section-intro">All 11 properties scored on a 0-100 composite scale. Click any property name to jump to its full detail block below.</p>
+
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Property</th>
+                    <th class="numeric">List</th>
+                    <th class="numeric">$/SqFt</th>
+                    <th class="numeric">AVM Gap</th>
+                    <th class="numeric">Rent Est</th>
+                    <th class="numeric">Yield</th>
+                    <th class="numeric">Carry %</th>
+                    <th class="numeric">DOM</th>
+                    <th>Cfg</th>
+                    <th class="numeric">Score</th>
+                    <th>Signal</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-tbody">
+                <!-- Rows inserted by Python -->
+
+                <tr>
+                    <td class="rank-cell">1</td>
+                    <td class="name-cell">
+                        <a href="#prop-4">Sunridge Drive</a>
+                        <span class="subdiv-cell">Suncrest · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$315,000</td>
+                    <td class="numeric">$197</td>
+                    <td class="numeric"><span class="pos">+7.8%</span></td>
+                    <td class="numeric">$2,143</td>
+                    <td class="numeric"><b>8.16%</b></td>
+                    <td class="numeric">1.97%</td>
+                    <td class="numeric">65</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 78%;"></span></span>
+                        <b>78</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">2</td>
+                    <td class="name-cell">
+                        <a href="#prop-7">Citruswood Drive</a>
+                        <span class="subdiv-cell">Enclave at Moss Park · Lake Nona / Orlando 32832</span>
+                    </td>
+                    <td class="numeric">$359,990</td>
+                    <td class="numeric">$182</td>
+                    <td class="numeric"><span class="pos">+3.3%</span></td>
+                    <td class="numeric">$2,709</td>
+                    <td class="numeric"><b>9.03%</b></td>
+                    <td class="numeric">2.54%</td>
+                    <td class="numeric">54</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 67%;"></span></span>
+                        <b>67</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">3</td>
+                    <td class="name-cell">
+                        <a href="#prop-3">Sunkissed Drive</a>
+                        <span class="subdiv-cell">Suncrest · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$304,990</td>
+                    <td class="numeric">$190</td>
+                    <td class="numeric"><span class="pos">+1.9%</span></td>
+                    <td class="numeric">$2,100</td>
+                    <td class="numeric"><b>8.26%</b></td>
+                    <td class="numeric">1.99%</td>
+                    <td class="numeric">51</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 63%;"></span></span>
+                        <b>63</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">4</td>
+                    <td class="name-cell">
+                        <a href="#prop-2">Cyrils Drive</a>
+                        <span class="subdiv-cell">Weslyn Park · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$345,000</td>
+                    <td class="numeric">$186</td>
+                    <td class="numeric"><span class="pos">+4.1%</span></td>
+                    <td class="numeric">$2,495</td>
+                    <td class="numeric"><b>8.68%</b></td>
+                    <td class="numeric">3.30%</td>
+                    <td class="numeric">90</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 62%;"></span></span>
+                        <b>62</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">5</td>
+                    <td class="name-cell">
+                        <a href="#prop-5">Franklin Drive</a>
+                        <span class="subdiv-cell">Split Oak Reserve · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$369,000</td>
+                    <td class="numeric">$211</td>
+                    <td class="numeric"><span class="pos">+4.9%</span></td>
+                    <td class="numeric">$2,340</td>
+                    <td class="numeric"><b>7.61%</b></td>
+                    <td class="numeric">1.77%</td>
+                    <td class="numeric">22</td>
+                    <td>Detached*</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 60%;"></span></span>
+                        <b>60</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">6</td>
+                    <td class="name-cell">
+                        <a href="#prop-9">Stephs Field Drive</a>
+                        <span class="subdiv-cell">Silver Springs · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$374,900</td>
+                    <td class="numeric">$217</td>
+                    <td class="numeric"><span class="pos">+1.8%</span></td>
+                    <td class="numeric">$2,418</td>
+                    <td class="numeric"><b>7.74%</b></td>
+                    <td class="numeric">1.75%</td>
+                    <td class="numeric">101</td>
+                    <td>Detached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-fav" style="width: 57%;"></span></span>
+                        <b>57</b>
+                    </td>
+                    <td><span class="signal-pill favorable">Favorable</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">7</td>
+                    <td class="name-cell">
+                        <a href="#prop-1">Jubiloso Drive</a>
+                        <span class="subdiv-cell">Sola Vista · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$397,950</td>
+                    <td class="numeric">$168</td>
+                    <td class="numeric"><span class="pos">+1.3%</span></td>
+                    <td class="numeric">$2,357</td>
+                    <td class="numeric"><b>7.11%</b></td>
+                    <td class="numeric">1.79%</td>
+                    <td class="numeric">50</td>
+                    <td>Detached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-neu" style="width: 49%;"></span></span>
+                        <b>49</b>
+                    </td>
+                    <td><span class="signal-pill neutral">Neutral</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">8</td>
+                    <td class="name-cell">
+                        <a href="#prop-11">Sunsail Drive</a>
+                        <span class="subdiv-cell">Starwood · Lake Nona / Orlando 32832</span>
+                    </td>
+                    <td class="numeric">$389,990</td>
+                    <td class="numeric">$262</td>
+                    <td class="numeric"><span class="pos">+1.6%</span></td>
+                    <td class="numeric">$2,530</td>
+                    <td class="numeric"><b>7.78%</b></td>
+                    <td class="numeric">2.51%</td>
+                    <td class="numeric">121</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-cau" style="width: 47%;"></span></span>
+                        <b>47</b>
+                    </td>
+                    <td><span class="signal-pill caution">Caution</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">9</td>
+                    <td class="name-cell">
+                        <a href="#prop-6">Crossings Drive</a>
+                        <span class="subdiv-cell">Crossings Ph 1 · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$370,000</td>
+                    <td class="numeric">$192</td>
+                    <td class="numeric"><span class="neg">-1.1%</span></td>
+                    <td class="numeric">$2,350</td>
+                    <td class="numeric"><b>7.62%</b></td>
+                    <td class="numeric">2.15%</td>
+                    <td class="numeric">61</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-neu" style="width: 45%;"></span></span>
+                        <b>45</b>
+                    </td>
+                    <td><span class="signal-pill neutral">Neutral</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">10</td>
+                    <td class="name-cell">
+                        <a href="#prop-8">Caspian Drive</a>
+                        <span class="subdiv-cell">Lakeshore at Narcoossee · St. Cloud</span>
+                    </td>
+                    <td class="numeric">$335,000</td>
+                    <td class="numeric">$207</td>
+                    <td class="numeric"><span class="neg">-3.4%</span></td>
+                    <td class="numeric">$2,199</td>
+                    <td class="numeric"><b>7.88%</b></td>
+                    <td class="numeric">2.42%</td>
+                    <td class="numeric">115</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-neu" style="width: 38%;"></span></span>
+                        <b>38</b>
+                    </td>
+                    <td><span class="signal-pill neutral">Neutral</span></td>
+                </tr>
+
+                <tr>
+                    <td class="rank-cell">11</td>
+                    <td class="name-cell">
+                        <a href="#prop-10">Town Lake Drive</a>
+                        <span class="subdiv-cell">Ravinia at East Park · Lake Nona / Orlando 32832</span>
+                    </td>
+                    <td class="numeric">$409,000</td>
+                    <td class="numeric">$177</td>
+                    <td class="numeric"><span class="neg">-1.0%</span></td>
+                    <td class="numeric">$2,676</td>
+                    <td class="numeric"><b>7.85%</b></td>
+                    <td class="numeric">3.46%</td>
+                    <td class="numeric">92</td>
+                    <td>Attached</td>
+                    <td class="numeric">
+                        <span class="score-bar"><span class="score-bar-fill score-cau" style="width: 32%;"></span></span>
+                        <b>32</b>
+                    </td>
+                    <td><span class="signal-pill caution">Caution</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-size: 13px; color: var(--muted);">
+            <b>Reading the table:</b> "AVM Gap" is the percentage by which the RealAVM exceeds the list price (positive is favorable). "Yield" is annualized rent divided by list price. "Carry %" is annual taxes + CDD + HOA + flood insurance (where applicable) as a percentage of list price. "Score" is the weighted composite — see methodology below.
+        </p>
+    </div>
+</section>
+
+<!-- SCORING METHODOLOGY -->
+<section id="methodology">
+    <div class="container">
+        <h2>Scoring Methodology</h2>
+        <p class="section-intro">The composite score weights the seven dimensions a cash long-term-hold investor should care about. All raw metrics normalized 0–100 within the set, then weighted as below.</p>
+
+        <div class="methodology">
+            <h3>Weight Distribution</h3>
+            <div class="weight-grid">
+                <div class="weight-item"><span>AVM Gap (% under RealAVM, higher better)</span><span class="pct">25%</span></div>
+                <div class="weight-item"><span>Indicative Gross Yield (rent ÷ price)</span><span class="pct">20%</span></div>
+                <div class="weight-item"><span>Carrying Cost Efficiency (carry %, lower better)</span><span class="pct">20%</span></div>
+                <div class="weight-item"><span>Market Signals (DOM + reduction depth)</span><span class="pct">15%</span></div>
+                <div class="weight-item"><span>$/SqFt Value (relative to set, lower better)</span><span class="pct">10%</span></div>
+                <div class="weight-item"><span>AVM Confidence (Realist score)</span><span class="pct">5%</span></div>
+                <div class="weight-item"><span>Qualitative Flags (motivation, schools, layout, risk)</span><span class="pct">5%</span></div>
+            </div>
+        </div>
+
+        <div class="methodology" style="background: #fff7e6; border-left: 4px solid var(--amber);">
+            <h3 style="color: var(--amber);">Important Disclosures</h3>
+            <ul style="margin-left: 20px; font-size: 14px;">
+                <li><b>RentAVM is directional, not confirmed.</b> Realist's rental estimates are MLS-derived. Verandah independent rental comp pull is recommended before any underwriting decision.</li>
+                <li><b>Property tax projected at 1.4% of purchase price.</b> Current tax bills include homestead exemptions and assessment caps that will reset upon sale. This standardized projection ensures fair comparison across the set.</li>
+                <li><b>Flood insurance estimate ($1,500/yr placeholder)</b> applied only to Town Lake Drive (Zone AE). Actual quotes vary $800–2,500 depending on elevation certificate and current NFIP/private market rates.</li>
+                <li><b>Carry-as-% excludes mortgage payments, property management fees, vacancy reserves, capex reserves, and insurance (other than flood where mandated).</b> Fully-loaded yield will be lower than indicated.</li>
+                <li><b>This analysis assumes cash purchase</b> and a long-term unfurnished rental hold strategy. Conclusions would shift meaningfully for short-term rental, fix-and-flip, or financed purchase scenarios.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CROSS-SET INSIGHTS -->
+<section id="insights">
+    <div class="container">
+        <h2>Comparative Insights Across the Set</h2>
+        <p class="section-intro">Patterns and standout data points from the eleven-property analysis.</p>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>Highest Indicative Yield</h4>
+                <p><b>Citruswood Drive (Lake Nona)</b> — 9.03% gross. The Lake Nona corridor's rental premium combined with a 4BR layout and motivated investor seller produces the strongest income profile in the set. Even at full ask, the math works.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Lowest Annual Carry</h4>
+                <p><b>Stephs Field (Silver Springs REO)</b> — 1.75% carry-as-%. No CDD, light HOA, no flood. Closely followed by Franklin (1.77%) and Jubiloso (1.79%). All three are detached SFR products — the format with the leanest ongoing cost structure.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Strongest Seller Distress</h4>
+                <p><b>Franklin Road (Split Oak Reserve)</b> — owner selling $24K below their own 2021 purchase price in an appreciating market. Out-of-state listing agent + vacant + recent 5.4% cut + closing credit + just 22 DOM into the cycle. Sunsail (#8) and Sunridge (#1) are close behind.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Largest AVM Discount</h4>
+                <p><b>Sunridge Loop (Suncrest REO)</b> — list is 7.7% under RealAVM with confidence 98. Bank-owned, three failed listings, just absorbed a $25K cut. A $290K cash offer would push the AVM gap above 14%.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Best Schools</h4>
+                <p><b>Citruswood Drive</b> and <b>Town Lake Drive</b> tie — both feed into Innovation High School with Innovation Middle. Lake Nona's premium feeder pattern. Sun Blaze Elementary serves Town Lake; Moss Park Elementary serves Citruswood.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Most Diagnostic Data Point</h4>
+                <p><b>Sunsail Avenue's 7-month failed rental test</b> — owner reduced rent seven times from $2,750 to $2,400 and never leased. RentAVM at $2,530 is unreliable for this property. Strongest single data point in the set for absorption-risk assessment.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Best Detached SFR Path</h4>
+                <p>Three detached candidates: <b>Stephs Field</b> (REO, lowest carry, flex 4th BR), <b>Franklin</b> (strongest distress, conservative RentAVM), and <b>Jubiloso</b> (largest lot and footprint). Stephs Field offers the strongest investor economics; Franklin offers the best negotiation upside.</p>
+            </div>
+            <div class="insight-card">
+                <h4>Biggest Risks to Avoid</h4>
+                <p><b>Town Lake Drive</b> (Zone AE flood + heaviest carry + zero motivation) and <b>Sunsail Avenue</b> (proven rental absorption problem). Both have surface appeal but structural issues that compound over a long-term hold horizon.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DETAILED PROPERTY BLOCKS -->
+<section id="details">
+    <div class="container">
+        <h2>Detailed Property Analysis — Ranked Order</h2>
+        <p class="section-intro">Full scorecard data for each property in ranked order. Each block includes valuation analysis, indicative rental yield, carrying cost breakdown, and the underlying composite score components.</p>
+        
+
+        <div class="property-detail" id="prop-4">
+            <div class="rank-banner">
+                <div class="rank-num">#1</div>
+                <span class="rank-badge" style="background: var(--green);">TOP PICK</span>
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>2928 Sunridge Loop</h3>
+            <div class="subdiv-line">Suncrest · St. Cloud · 2 / 2 · 1,601 sqft · Built 2022 · MLS S5144670</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">78<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Largest AVM discount in set + REO clearance mode + sister-unit rental verification — biggest negotiation runway.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$315,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$197</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+7.8%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,143</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">8.16%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$6,210</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> Largest AVM discount in set + REO clearance mode + sister-unit rental verification — biggest negotiation runway.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">100</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">55</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">87</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">72</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">70</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">70</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-7">
+            <div class="rank-banner">
+                <div class="rank-num">#2</div>
+                <span class="rank-badge" style="background: var(--green);">TOP 2</span>
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>12235 Citruswood Dr</h3>
+            <div class="subdiv-line">Enclave at Moss Park · Lake Nona / Orlando 32832 · 4 / 2.5 · 1,976 sqft · Built 2012 · MLS O6388432</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">67<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Highest yield in set + true Lake Nona address + best schools + 4BR with 1st-floor primary suite. Older build is the trade-off.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$359,990</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$182</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+3.3%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,709</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">9.03%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$9,144</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> Highest yield in set + true Lake Nona address + best schools + 4BR with 1st-floor primary suite. Older build is the trade-off.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">60</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">100</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">54</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">47</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">85</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">25</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">82</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-3">
+            <div class="rank-banner">
+                <div class="rank-num">#3</div>
+                <span class="rank-badge" style="background: var(--green);">TOP 3</span>
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>2694 Sunkissed Dr</h3>
+            <div class="subdiv-line">Suncrest · St. Cloud · 2 / 2 · 1,601 sqft · Built 2022 · MLS O6389896</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">63<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Verified rental floor, dual-track exit, single-story townhouse, low carry — clean transaction profile.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$304,990</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$190</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+1.9%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,100</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">8.26%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$6,070</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> Verified rental floor, dual-track exit, single-story townhouse, low carry — clean transaction profile.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">48</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">60</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">86</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">45</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">76</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">72</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-2">
+            <div class="rank-banner">
+                <div class="rank-num">#4</div>
+                
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>6491 Cyrils Dr</h3>
+            <div class="subdiv-line">Weslyn Park · St. Cloud · 3 / 3 · 1,855 sqft · Built 2023 · MLS O6401147</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">62<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Strong yield + motivated seller + paid solar, but heaviest HOA in set drags carry %.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$345,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$186</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+4.1%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,495</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">8.68%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$11,374</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> Strong yield + motivated seller + paid solar, but heaviest HOA in set drags carry %.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">67</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">82</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">9</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">77</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">81</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">78</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-5">
+            <div class="rank-banner">
+                <div class="rank-num">#5</div>
+                
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>2765 Franklin Rd</h3>
+            <div class="subdiv-line">Split Oak Reserve · St. Cloud · 3 / 2.5 · 1,748 sqft · Built 2021 · MLS O6394344</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">60<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Owner selling below 2021 cost basis — strongest distress signal in set, plus low carry and conservative RentAVM.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$369,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$211</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+4.9%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,340</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.61%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$6,546</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> Owner selling below 2021 cost basis — strongest distress signal in set, plus low carry and conservative RentAVM.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">74</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">26</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">99</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">21</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">54</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">80</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-9">
+            <div class="rank-banner">
+                <div class="rank-num">#6</div>
+                
+                <span class="signal-pill green" style="font-size: 12px;">▲ Favorable</span>
+            </div>
+            <h3>5264 Stephs Field St</h3>
+            <div class="subdiv-line">Silver Springs · St. Cloud · 3+flex / 2.5 · 1,724 sqft · Built 2022 · MLS O6375769</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">57<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">True detached SFR with lowest carry % in entire set + REO motivation + flex-room 4th bedroom potential.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$374,900</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$217</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+1.8%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,418</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.74%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$6,569</div>
+                </div>
+            </div>
+
+            <div class="insight-block green">
+                <b>Strategic Read:</b> True detached SFR with lowest carry % in entire set + REO motivation + flex-room 4th bedroom potential.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">46</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">33</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">100</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">54</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">47</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">50</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">75</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-1">
+            <div class="rank-banner">
+                <div class="rank-num">#7</div>
+                
+                <span class="signal-pill amber" style="font-size: 12px;">◆ Neutral</span>
+            </div>
+            <h3>5329 Jubiloso Dr</h3>
+            <div class="subdiv-line">Sola Vista · St. Cloud · 4 / 3.5 · 2,364 sqft · Built 2019 · MLS O6384282</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">49<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Largest detached SFR with biggest lot, but mild seller motivation and weakest school zone.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$397,950</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$168</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+1.3%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,357</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.11%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$7,119</div>
+                </div>
+            </div>
+
+            <div class="insight-block amber">
+                <b>Strategic Read:</b> Largest detached SFR with biggest lot, but mild seller motivation and weakest school zone.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">42</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">0</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">98</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">15</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">100</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">55</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-11">
+            <div class="rank-banner">
+                <div class="rank-num">#8</div>
+                
+                <span class="signal-pill red" style="font-size: 12px;">⚠ Caution</span>
+            </div>
+            <h3>11607 Sunsail Ave</h3>
+            <div class="subdiv-line">Starwood · Lake Nona / Orlando 32832 · 3 / 2.5 · 1,491 sqft · Built 2023 · MLS O6369049</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">47<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">7-month failed rental test (couldn't lease at $2,400) + highest $/sqft + smallest unit = absorption risk too high.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$389,990</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$262</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">+1.6%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,530</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.78%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$9,806</div>
+                </div>
+            </div>
+
+            <div class="insight-block red">
+                <b>Strategic Read:</b> 7-month failed rental test (couldn't lease at $2,400) + highest $/sqft + smallest unit = absorption risk too high.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">45</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">35</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">56</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">87</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">0</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">20</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-6">
+            <div class="rank-banner">
+                <div class="rank-num">#9</div>
+                
+                <span class="signal-pill amber" style="font-size: 12px;">◆ Neutral</span>
+            </div>
+            <h3>387 Crossings Ave</h3>
+            <div class="subdiv-line">Crossings Ph 1 · St. Cloud · 3 / 2.5 · 1,923 sqft · Built 2025 · MLS S5144381</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">45<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Newest build (2025) with owner-provided rental ask, but list above AVM and modest motivation.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$370,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$192</div>
+                </div>
+                <div class="mini-metric amber">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">-1.1%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,350</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.62%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$7,940</div>
+                </div>
+            </div>
+
+            <div class="insight-block amber">
+                <b>Strategic Read:</b> Newest build (2025) with owner-provided rental ask, but list above AVM and modest motivation.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">20</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">27</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">77</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">30</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">74</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">100</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">50</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-8">
+            <div class="rank-banner">
+                <div class="rank-num">#10</div>
+                <span class="rank-badge" style="background: var(--red);">CAUTION</span>
+                <span class="signal-pill amber" style="font-size: 12px;">◆ Neutral</span>
+            </div>
+            <h3>5077 Caspian St</h3>
+            <div class="subdiv-line">Lakeshore at Narcoossee · St. Cloud · 3 / 2.5 · 1,617 sqft · Built 2018 · MLS O6371750</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">38<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Gated community with East Lake Toho access, but list above AVM — only works at AVM-priced offer ($310-320K).</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$335,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$207</div>
+                </div>
+                <div class="mini-metric red">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">-3.4%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,199</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.88%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$8,122</div>
+                </div>
+            </div>
+
+            <div class="insight-block amber">
+                <b>Strategic Read:</b> Gated community with East Lake Toho access, but list above AVM — only works at AVM-priced offer ($310-320K).
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">0</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">40</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">61</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">64</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">58</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">0</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">50</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+
+        <div class="property-detail" id="prop-10">
+            <div class="rank-banner">
+                <div class="rank-num">#11</div>
+                <span class="rank-badge" style="background: var(--red);">CAUTION</span>
+                <span class="signal-pill red" style="font-size: 12px;">⚠ Caution</span>
+            </div>
+            <h3>10033 Town Lake Dr</h3>
+            <div class="subdiv-line">Ravinia at East Park · Lake Nona / Orlando 32832 · 3 / 2+2 · 2,305 sqft · Built 2016 · MLS O6378416</div>
+
+            <div class="composite-score">
+                <div>
+                    <div class="score-label">Composite Score</div>
+                    <div class="score-num">32<span style="font-size:18px;color:var(--muted);">/100</span></div>
+                </div>
+                <div class="score-tagline">Lake Nona address and pond view, but FLOOD ZONE AE + heaviest carry + zero reductions = no investor case at list.</div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="mini-metric">
+                    <div class="label">List Price</div>
+                    <div class="value">$409,000</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">$/SqFt</div>
+                    <div class="value">$177</div>
+                </div>
+                <div class="mini-metric amber">
+                    <div class="label">AVM Gap</div>
+                    <div class="value">-1.0%</div>
+                </div>
+                <div class="mini-metric gold">
+                    <div class="label">RentAVM</div>
+                    <div class="value">$2,676</div>
+                </div>
+                <div class="mini-metric green">
+                    <div class="label">Gross Yield</div>
+                    <div class="value">7.85%</div>
+                </div>
+                <div class="mini-metric">
+                    <div class="label">Annual Carry</div>
+                    <div class="value">$14,146</div>
+                </div>
+            </div>
+
+            <div class="insight-block red">
+                <b>Strategic Read:</b> Lake Nona address and pond view, but FLOOD ZONE AE + heaviest carry + zero reductions = no investor case at list.
+            </div>
+
+            <div class="score-breakdown">
+                <div class="sb-item"><div class="label">AVM Gap</div><div class="val">21</div></div>
+                <div class="sb-item"><div class="label">Yield</div><div class="val">39</div></div>
+                <div class="sb-item"><div class="label">Carry</div><div class="val">0</div></div>
+                <div class="sb-item"><div class="label">Market</div><div class="val">35</div></div>
+                <div class="sb-item"><div class="label">$/SqFt</div><div class="val">90</div></div>
+                <div class="sb-item"><div class="label">Confidence</div><div class="val">75</div></div>
+                <div class="sb-item"><div class="label">Qualitative</div><div class="val">25</div></div>
+            </div>
+            <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Score components on 0–100 scale, normalized within the set. Composite = AVM Gap (25%) + Yield (20%) + Carry (20%) + Market (15%) + $/SqFt (10%) + Confidence (5%) + Qualitative (5%).</p>
+
+            <a class="back-to-top" href="#ranking">← Back to Ranking Table</a>
+        </div>
+    </div>
+</section>
+
+<!-- RECOMMENDED NEXT STEPS -->
+<section id="next-steps">
+    <div class="container">
+        <h2>Recommended Next Steps for Andy</h2>
+        <p class="section-intro">A phased path from this analysis to executed acquisition.</p>
+
+        <div class="action-block">
+            <h4><span class="step-num">1</span>Verandah Rental Comp Confirmation — Top 3 Properties</h4>
+            <p>Before any offer is written, Verandah pulls independent rental comps within 0.5–1 mile of each top-3 property. Target: confirm RentAVM directionally for Sunridge, Citruswood, and Sunkissed. This converts directional yield numbers into underwritable income figures.</p>
+            <ul>
+                <li><b>Sunridge:</b> validate Suncrest 2BR townhouse rental velocity at $2,100–2,150</li>
+                <li><b>Citruswood:</b> validate Lake Nona 4BR townhouse rental at $2,650–2,800 with 1st-floor primary premium</li>
+                <li><b>Sunkissed:</b> already partially validated by sister-unit live ask at $2,150 — Verandah pulls supporting comps</li>
+            </ul>
+        </div>
+
+        <div class="action-block">
+            <h4><span class="step-num">2</span>On-Site Walkthrough — Top 2 Priority Properties</h4>
+            <p>Linda Lopez conducts walkthroughs of the top 2 ranked properties (Sunridge and Citruswood) with branded Verandah key packets. Focus areas:</p>
+            <ul>
+                <li><b>Sunridge:</b> condition assessment given REO "as-is" status, HVAC age, water heater, appliances, any signs of vandalism or deferred maintenance</li>
+                <li><b>Citruswood:</b> 2012 build component-life review (HVAC, roof remaining life, water heater, appliances); rental marketability of 1-car garage limitation</li>
+            </ul>
+        </div>
+
+        <div class="action-block">
+            <h4><span class="step-num">3</span>Offer Strategy Sequencing</h4>
+            <p>Recommend offering on properties in priority order, not simultaneously. Allows leverage on each negotiation without overcommitting capital:</p>
+            <ul>
+                <li><b>First offer — Sunridge at $290–295K cash, 30-day close</b> (Fannie Mae HomePath, full proof of funds). Realistic counter range $300–308K. If accepted, AVM gap is +13–17%.</li>
+                <li><b>If Sunridge falls through — Citruswood at $342–348K cash, 30-day close.</b> LLC investor seller responds to clean cash with proof of funds. Realistic counter range $350–355K. AVM gap stays at +5–7%.</li>
+                <li><b>Backup option — Sunkissed at $290–298K cash.</b> Cleanest transaction, fastest close, lowest negotiation leverage but least friction.</li>
+            </ul>
+        </div>
+
+        <div class="action-block">
+            <h4><span class="step-num">4</span>Pre-Offer Due Diligence Items</h4>
+            <ul>
+                <li><b>Sunridge / Stephs Field (REO):</b> review HUD 24 CFR 206.125 disclosure requirements, RES.NET process, $300 buyer-side technology fee, ServiceLink title arrangements</li>
+                <li><b>Caspian (if pursued at AVM):</b> tax shock post-sale (homestead drops), comps for Lakeshore at Narcoossee specifically given lower AVM confidence</li>
+                <li><b>Town Lake (if pursued):</b> elevation certificate pull, NFIP and private flood insurance quotes, evaluate full carrying-cost impact at quoted premium</li>
+                <li><b>Sunsail (if pursued):</b> deep rental absorption diagnostic — what specifically prevented leasing? Tour neighboring units, talk to property managers in the immediate area</li>
+            </ul>
+        </div>
+
+        <div class="action-block">
+            <h4><span class="step-num">5</span>Verandah's Role Through Closing &amp; Beyond</h4>
+            <ul>
+                <li>Rental comp confirmation and underwriting support</li>
+                <li>On-site property walkthroughs</li>
+                <li>Offer preparation guidance, condition contingency drafting</li>
+                <li>Post-close: lease-up marketing, tenant screening, full property management under Verandah's standard 8% management / 50% leasing fee structure</li>
+                <li>SureVestor Landlord Shield enrollment for GL coverage with no deductible (Verandah-managed properties only)</li>
+                <li>Experian rent reporting via AppFolio for tenant credit-building (key tenant retention tool)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="report-footer">
+    <div class="container">
+        <div class="brand">VERANDAH PROPERTIES LLC</div>
+        <div>Lake Nona's Property Management Standard</div>
+        <div style="margin-top: 12px; font-size: 12px;">
+            Prepared by Pamela Syvertson, Owner &amp; Broker · May 4, 2026<br>
+            For Andy Patel · 11-Property Investment Analysis
+        </div>
+        <div class="disclaimer">
+            This report represents a directional value-and-yield analysis for cash investor decision support. RealAVM™ values courtesy of CoreLogic via Stellar MLS Realist. All rental yield figures are MLS-derived RentAVM estimates and require independent rental comp confirmation before underwriting. Property tax projections at 1.4% of purchase price are normalized estimates; actual post-sale tax bills will vary based on Osceola/Orange County reassessment, exemptions, and rate changes. Verandah Properties LLC is not a tax advisor, financial advisor, or licensed appraiser. This analysis does not constitute investment advice.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
